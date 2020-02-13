@@ -18,4 +18,9 @@ namespace POSServices.Models
 
         public virtual Employee User { get; set; }
     }
+
+    public class userLoginList
+    {
+        public List<UserLogin> UserList { get; set; }
+    }
 }

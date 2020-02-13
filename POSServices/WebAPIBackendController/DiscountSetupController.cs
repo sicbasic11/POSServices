@@ -61,7 +61,7 @@ namespace POSServices.WebAPIBackendController
             }            
         }
 
-        [HttpPost("Create")]
+        [HttpPost("Add")]
         public async Task<IActionResult> create(discountSetupList discSetupList)
         {
             try
@@ -125,7 +125,7 @@ namespace POSServices.WebAPIBackendController
             }            
         }
 
-        [HttpPost("Update")]
+        [HttpPost("Edit")]
         public async Task<IActionResult> update(discountSetupList discSetupList)
         {
             try
@@ -167,7 +167,7 @@ namespace POSServices.WebAPIBackendController
                         {
                             status = "404",
                             update = false,
-                            message = "discount code not found."
+                            message = "Discount code not found."
                         });
                     }
                 }

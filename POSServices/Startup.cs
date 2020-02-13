@@ -35,12 +35,12 @@ namespace POSServices
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            BackendConnString = Configuration["ConnectionStrings:BackendConnection"];
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);            
 
             services.AddDbContext<Models.DB_BIENSI_POSContext>(options => options.UseSqlServer(BackendConnString));
             services.AddScoped<IAuthRepository, AuthRepository>();
+
+            services.AddDbContext<PosMsgModels.HO_MsgContext>(options => options.UseSqlServer(POSMsgConnString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +55,7 @@ namespace POSServices
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            BackendConnString = Configuration["ConnectionStrings:BackendConnection"];
             POSMsgConnString = Configuration["ConnectionStrings:POSMsgConnection"];            
 
             app.UseStaticFiles();

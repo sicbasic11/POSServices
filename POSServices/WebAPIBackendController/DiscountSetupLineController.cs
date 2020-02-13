@@ -54,7 +54,7 @@ namespace POSServices.WebAPIBackendController
             }
         }
 
-        [HttpPost("Create")]
+        [HttpPost("Add")]
         public async Task<IActionResult> create(discountSetupLineList discSetupLnList)
         {
             try
@@ -101,7 +101,7 @@ namespace POSServices.WebAPIBackendController
             }
         }
 
-        [HttpPost("Update")]
+        [HttpPost("Edit")]
         public async Task<IActionResult> update(discountSetupLineList discSetupLnList)
         {
             try
